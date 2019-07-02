@@ -8,7 +8,7 @@ function Set-ClassicWebSearchSettings ($web, $searchUrl, $inh, $showNav) {
         -Value '{"Inherit":$inh,"ResultsPageAddress":$searchUrl,"ShowNavigation":$showNav}'
 }
 
-function Set-ClassicSiteSearchSettings ($siteUrl, $searchResultsPageAbsoluteUrl, $inherit, $showNavigation, $recurse) {
+function Set-PnPClassicSiteSearchSettings ($siteUrl, $searchResultsPageAbsoluteUrl, $inherit, $showNavigation, $recurse) {
 
     $cred = Get-Credential
     $ctx = Connect-PnPOnline -Url $siteUrl -Credentials $cred
@@ -29,4 +29,4 @@ function Set-ClassicSiteSearchSettings ($siteUrl, $searchResultsPageAbsoluteUrl,
 }
 
 # Example
-Set-ClassicSiteSearchSettings "https://simedev.sharepoint.com/sites/valo1.15.1/" "/search/pages/results.aspx" $true $true $false
+Set-PnPClassicSiteSearchSettings "https://simedev.sharepoint.com/sites/valo1.15.1/" "/search/pages/results.aspx" $true $true $false
